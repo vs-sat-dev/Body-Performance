@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <div class="form-group">
+            <form method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username"
+                       maxlength="40" />
+                <br />
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="username">Height cm:</label>
+                        <input type="number" name="height_cm" class="form-control" min="0" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="username">Weight kg:</label>
+                        <input type="number" name="weight_kg" class="form-control" min="0" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="username">Body fat %:</label>
+                        <input type="number" name="body_fat_pct" class="form-control" min="0" step="0.1">
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="username">Diastolic:</label>
+                        <input type="number" name="diastolic" class="form-control" min="0" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="username">Systolic:</label>
+                        <input type="number" name="systolic" class="form-control" min="0" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="username">Grip force:</label>
+                        <input type="number" name="gripForce" class="form-control" min="0" step="0.1">
+                    </div>
+                </div>
+
+                <br />
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="username">Sit and bend forward cm:</label>
+                        <input type="number" name="sit_and_bend_forward_cm" class="form-control" min="0" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="username">Sit-ups counts:</label>
+                        <input type="number" name="sit_ups_counts" class="form-control" min="0" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="username">Broad jump cm:</label>
+                        <input type="number" name="broad_jump_cm" class="form-control" min="0" step="0.1">
+                    </div>
+                </div>
+
+                <br />
+                <div align="center"><button class="btn btn-primary">Register</button></div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

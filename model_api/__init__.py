@@ -17,6 +17,9 @@ def create_app():
 
     create_database(app)
 
+    from .views import views
+    app.register_blueprint(views)
+
     return app
 
 
