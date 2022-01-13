@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 
 from .model import BodyPerformance
 from . import db
@@ -24,8 +24,12 @@ def home():
         sit_ups_counts = request.form.get('sit_ups_counts')
         broad_jump_cm = request.form.get('broad_jump_cm')
 
+        user = BodyPerformance.query.filter_by(username=username).first()
+
         if len(username) < 2 or len(username) > 40:
             flash('Incorrect name length', category='error')
+        elif user:
+            flash('This username already exist', category='error')
         elif float(age) < 0.0 or float(age) > 150:
             flash('Incorrect age', category='error')
         elif gender[0] not in ['F', 'M']:
@@ -60,8 +64,15 @@ def home():
             db.session.add(new_result)
             db.session.commit()
             db.session.refresh(new_result)
-            print(f'new_result: {new_result}')
-            return render_template('predicted_class.html')
+
+            return redirect(url_for('views.predicted_class', result_id=new_result.id))
 
     return render_template('home.html')
+
+
+@views.route('/predicted_class/<int:result_id>')
+def predicted_class(result_id):
+    body_performance = BodyPerformance.query.filter_by(id=result_id).first()
+    return render_template('predicted_class.html', body_performance=body_performance)
+
 

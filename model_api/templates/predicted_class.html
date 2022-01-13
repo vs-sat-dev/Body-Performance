@@ -3,5 +3,40 @@
 {% block title %}Your result{% endblock %}
 
 {% block content %}
-Your result
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Height cm</th>
+            <th scope="col">Weight kg</th>
+            <th scope="col">Body fat %</th>
+            <th scope="col">Diastolic</th>
+            <th scope="col">Systolic</th>
+            <th scope="col">Grip force</th>
+            <th scope="col">Sit and bend forward cm</th>
+            <th scope="col">Sit-ups counts</th>
+            <th scope="col">Broad jump cm</th>
+        </tr>
+      </thead>
+        <tr>
+            <th scope="col">{{body_performance.username}}</th>
+            <th scope="col">{{body_performance.age}}</th>
+            <th scope="col">{{body_performance.gender}}</th>
+            <th scope="col">{{body_performance.height_cm}}</th>
+            <th scope="col">{{body_performance.weight_kg}}</th>
+            <th scope="col">{{body_performance.body_fat_pct}}</th>
+            <th scope="col">{{body_performance.diastolic}}</th>
+            <th scope="col">{{body_performance.systolic}}</th>
+            <th scope="col">{{body_performance.grip_force}}</th>
+            <th scope="col">{{body_performance.sit_and_bend_forward_cm}}</th>
+            <th scope="col">{{body_performance.sit_ups_counts}}</th>
+            <th scope="col">{{body_performance.broad_jump_cm}}</th>
+        </tr>
+    </table>
+    <br />
+    <div align="center"><h3>Your class: {{body_performance.target_class.value}}</h3></div>
+</div>
 {% endblock %}
