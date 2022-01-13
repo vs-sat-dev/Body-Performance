@@ -10,56 +10,81 @@
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" class="form-control" placeholder="Username"
                        maxlength="40" />
-                <br />
+
                 <div class="row">
+
                     <div class="col-sm">
-                        <label for="username">Height cm:</label>
-                        <input type="number" name="height_cm" class="form-control" min="0" step="0.1">
+                        <label for="age">Age:</label>
+                        <input type="number" name="age" class="form-control" min="0" max="150" step="0.1">
                     </div>
                     <div class="col-sm">
-                        <label for="username">Weight kg:</label>
-                        <input type="number" name="weight_kg" class="form-control" min="0" step="0.1">
-                    </div>
-                    <div class="col-sm">
-                        <label for="username">Body fat %:</label>
-                        <input type="number" name="body_fat_pct" class="form-control" min="0" step="0.1">
+                        <br />
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="M" value="M">
+                          <label class="form-check-label" for="M">
+                            Male:
+                          </label>
+                        </div>
+
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gender" id="F" value="F" checked>
+                          <label class="form-check-label" for="F">
+                            Female
+                          </label>
+                        </div>
                     </div>
                 </div>
 
                 <br />
                 <div class="row">
                     <div class="col-sm">
-                        <label for="username">Diastolic:</label>
-                        <input type="number" name="diastolic" class="form-control" min="0" step="0.1">
+                        <label for="height_cm">Height cm:</label>
+                        <input type="number" name="height_cm" class="form-control" min="0" max="250" step="0.1">
                     </div>
                     <div class="col-sm">
-                        <label for="username">Systolic:</label>
-                        <input type="number" name="systolic" class="form-control" min="0" step="0.1">
+                        <label for="weight_kg">Weight kg:</label>
+                        <input type="number" name="weight_kg" class="form-control" min="0" max="500" step="0.1">
                     </div>
                     <div class="col-sm">
-                        <label for="username">Grip force:</label>
-                        <input type="number" name="gripForce" class="form-control" min="0" step="0.1">
+                        <label for="body_fat_pct">Body fat %:</label>
+                        <input type="number" name="body_fat_pct" class="form-control" min="0" max="100" step="0.1">
                     </div>
                 </div>
 
                 <br />
                 <div class="row">
                     <div class="col-sm">
-                        <label for="username">Sit and bend forward cm:</label>
-                        <input type="number" name="sit_and_bend_forward_cm" class="form-control" min="0" step="0.1">
+                        <label for="diastolic">Diastolic:</label>
+                        <input type="number" name="diastolic" class="form-control" min="0" max="300" step="0.1">
                     </div>
                     <div class="col-sm">
-                        <label for="username">Sit-ups counts:</label>
-                        <input type="number" name="sit_ups_counts" class="form-control" min="0" step="0.1">
+                        <label for="systolic">Systolic:</label>
+                        <input type="number" name="systolic" class="form-control" min="0" max="400" step="0.1">
                     </div>
                     <div class="col-sm">
-                        <label for="username">Broad jump cm:</label>
-                        <input type="number" name="broad_jump_cm" class="form-control" min="0" step="0.1">
+                        <label for="gripForce">Grip force:</label>
+                        <input type="number" name="gripForce" class="form-control" min="0" max="100" step="0.1">
                     </div>
                 </div>
 
                 <br />
-                <div align="center"><button class="btn btn-primary">Register</button></div>
+                <div class="row">
+                    <div class="col-sm">
+                        <label for="sit_and_bend_forward_cm">Sit and bend forward cm:</label>
+                        <input type="number" name="sit_and_bend_forward_cm" class="form-control" min="-100" max="500" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="sit_ups_counts">Sit-ups counts:</label>
+                        <input type="number" name="sit_ups_counts" class="form-control" min="0" max="150" step="0.1">
+                    </div>
+                    <div class="col-sm">
+                        <label for="broad_jump_cm">Broad jump cm:</label>
+                        <input type="number" name="broad_jump_cm" class="form-control" min="0" max="400" step="0.1">
+                    </div>
+                </div>
+
+                <br />
+                <div align="center"><button class="btn btn-primary">Send</button></div>
             </form>
         </div>
     </div>
