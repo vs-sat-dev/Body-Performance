@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from sqlalchemy import desc
+import pickle
 
 from .model import BodyPerformance
 from . import db
