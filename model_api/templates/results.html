@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Results{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Username</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Height cm</th>
+            <th scope="col">Weight kg</th>
+            <th scope="col">Body fat %</th>
+            <th scope="col">Diastolic</th>
+            <th scope="col">Systolic</th>
+            <th scope="col">Grip force</th>
+            <th scope="col">Sit and bend forward cm</th>
+            <th scope="col">Sit-ups counts</th>
+            <th scope="col">Broad jump cm</th>
+            <th scope="col">Class</th>
+        </tr>
+      </thead>
+        {% for r in res %}
+        <tr>
+            <th scope="col">{{loop.index}}</th>
+            <th scope="col">{{r.username}}</th>
+            <th scope="col">{{r.age}}</th>
+            <th scope="col">{{r.gender}}</th>
+            <th scope="col">{{r.height_cm}}</th>
+            <th scope="col">{{r.weight_kg}}</th>
+            <th scope="col">{{r.body_fat_pct}}</th>
+            <th scope="col">{{r.diastolic}}</th>
+            <th scope="col">{{r.systolic}}</th>
+            <th scope="col">{{r.grip_force}}</th>
+            <th scope="col">{{r.sit_and_bend_forward_cm}}</th>
+            <th scope="col">{{r.sit_ups_counts}}</th>
+            <th scope="col">{{r.broad_jump_cm}}</th>
+            <th scope="col">{{r.target_class.value}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
